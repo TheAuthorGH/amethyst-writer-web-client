@@ -1,0 +1,25 @@
+{
+  "files": [
+    "./src/index.ts"
+  ],
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "rootDirs": [ "./src", "./tests" ],
+    "module": "CommonJS",
+    "declaration": true,
+    "moduleResolution": "node",
+    "target": "es2019",
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "baseUrl": "."
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "./node_modules",
+    "./tests",
+    "./dist"
+  ]
+}
