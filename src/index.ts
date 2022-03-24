@@ -8,8 +8,8 @@ export function getWebClientExpressRouter() {
 
   router.use('/', express.static(__dirname));
 
-  // TODO: Find a way to serve this without using relative path
-  router.use('/resources', express.static(path.resolve(__dirname, '../node_modules/@amethyst-writer/ui/dist')));
+  const uiPath = path.dirname(require.resolve('@amethyst-writer/ui/package.json')) + '/dist';
+  router.use('/resources', express.static(uiPath));
 
   return router;
 }

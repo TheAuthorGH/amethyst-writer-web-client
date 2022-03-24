@@ -11,8 +11,9 @@ const express_1 = __importDefault(require("express"));
 function getWebClientExpressRouter() {
     const router = express_1.default.Router();
     router.use('/', express_1.default.static(__dirname));
-    // TODO: Find a way to serve this without using relative path
-    router.use('/resources', express_1.default.static(path_1.default.resolve(__dirname, '../node_modules/@amethyst-writer/ui/dist')));
+    const uiPath = path_1.default.dirname(require.resolve('@amethyst-writer/ui/package.json')) + '/dist';
+    console.log(uiPath);
+    router.use('/resources', express_1.default.static(uiPath));
     return router;
 }
 exports.getWebClientExpressRouter = getWebClientExpressRouter;
